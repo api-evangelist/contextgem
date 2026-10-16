@@ -1,23 +1,91 @@
 aid: contextgem
+
 name: ContextGem
-description: 'ContextGem is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://contextgem.shcherbak.ai/github-social-preview.png
+
+description: 'ContextGem provides an AI-powered platform for extracting structured data from unstructured text using large language models. It offers pipelines for aspect extraction, concept identification, and decision modeling, enabling developers to integrate advanced natural language understanding into their applications. The documentation includes quickstart guides, installation instructions, and extensive examples for building extraction pipelines and leveraging supported LLMs.'
+
 url: https://raw.githubusercontent.com/api-evangelist/contextgem/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-16 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-16'
+
 modified: '2026-10-16'
+
 tags:
+- AI
+- NLP
+- DataExtraction
+- LLM
+- Platform
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/contextgem-rules.yml
+- type: Conformance
+  url: conformance/contextgem-conformance.yml
+- type: LLMsTxt
+  url: llms/contextgem-llms.txt
+- type: Hosts
+  url: hosts/contextgem-hosts.yml
+- type: Vendors
+  url: vendors/contextgem-vendors.yml
+- type: SDKs
+  url: packages/contextgem-packages.yml
+- type: Packages
+  url: packages/contextgem-packages.yml
+- type: DomainSecurity
+  url: security/contextgem-domain-security.yml
 - type: Website
   url: https://contextgem.dev/
+- type: Documentation
+  url: https://contextgem.shcherbak.ai/
+- type: GettingStarted
+  url: https://contextgem.shcherbak.ai/quickstart/
+- type: Installation
+  url: https://contextgem.shcherbak.ai/installation/
+
+apis:
+- aid: contextgem:contextgem-api
+  name: ContextGem API
+  description: 'ContextGem API as documented publicly: 1 operations. Contract generated from the documentation by API Evangelist (2026-10-16);
+    not the provider''s own document.'
+  humanURL: https://contextgem.shcherbak.ai/decision_models/decision_models
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/contextgem-openapi-generated.yml
+    x-provenance: generated
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  method: derived
+  generated: '2026-10-16'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes developer documentation but serves no machine-readable contract from it
+  evidence:
+  - url: https://contextgem.dev/
+    status: 200
+x-enrichment:
+  date: '2026-10-16'
+  status: enriched
+  artifacts_added: 11
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

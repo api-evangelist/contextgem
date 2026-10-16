@@ -1,0 +1,66 @@
+generated: '2026-10-16'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 2
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - docs
+  - website
+hosts:
+- host: api.contextgem.dev
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: contextgem.dev
+  role: api
+  relation: own
+- host: api.shcherbak.ai
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: shcherbak.ai
+  role: api
+  relation: other-domain
+- host: contextgem.dev
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: fastly
+  registrable_domain: contextgem.dev
+  role: website
+  relation: own
+- host: contextgem.shcherbak.ai
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Documentation
+  - GettingStarted
+  - Installation
+  serves:
+  - docs
+  - documentation
+  - hosting
+  vendor: sphinx
+  registrable_domain: shcherbak.ai
+  role: docs
+  relation: other-domain

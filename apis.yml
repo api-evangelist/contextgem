@@ -62,16 +62,15 @@ common:
   url: https://contextgem.shcherbak.ai/installation/
 
 apis:
-- aid: contextgem:contextgem-api
-  name: ContextGem API
-  description: 'ContextGem API as documented publicly: 1 operations. Contract generated from the documentation by API Evangelist (2026-10-16);
-    not the provider''s own document.'
+- aid: contextgem:contextgem-systemone-api
+  name: ContextGem Systemone API
+  description: The Systemone API from ContextGem — 1 operation(s) for systemone.
   humanURL: https://contextgem.shcherbak.ai/decision_models/decision_models
+  tags:
+  - Systemone
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/contextgem-openapi-generated.yml
-    x-provenance: generated
-
+    url: openapi/contextgem-systemone-api-openapi.yml
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec
